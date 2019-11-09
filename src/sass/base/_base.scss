@@ -24,7 +24,7 @@ body {
 }
 .container {
   display: grid;
-  grid-template-rows: max-content max-content 1fr;
+  grid-template-rows: max-content max-content 1fr max-content;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -41,13 +41,15 @@ body {
       gap: 6rem;
 
       li {
-        font-size: 2.2rem;
-        color: #4a4c59;
-        text-decoration: none;
-      }
-      li.active {
-        font-weight: 700;
-        text-decoration: underline;
+        a {
+          font-size: 2.2rem;
+          color: #4a4c59;
+          text-decoration: none;
+        }
+        a.active {
+          font-weight: 700;
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -106,14 +108,11 @@ p {
   transform: translateY(-50%);
 }
 .navigation {
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
   display: grid;
   grid-template-rows: 1fr 1fr;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  padding-bottom: 5rem;
 }

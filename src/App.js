@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
 import Nav from "./components/Nav";
+import Arrows from "./components/Arrows";
+import Socials from "./components/Socials";
+
 import Profile from "./components/Profile";
 import Education from "./components/Education";
 import Work from "./components/Work";
@@ -20,6 +23,8 @@ export default class App extends Component {
           <Route path="/work" component={Work} />
           <Route path="/interests" component={Interests} />
           <Route path="/contact" component={Contact} />
+          <Arrows />
+          <Socials />
         </div>
       </BrowserRouter>
     );
