@@ -13,36 +13,72 @@ import Interests from "./Interests";
 import Contact from "./Contact";
 
 class Container extends Component {
+  state = {
+    prevHeirarchy: this.getLocationHeirarchy(this.props.location)
+  };
+
+  componentWillReceiveProps() {
+    this.setState({
+      prevHeirarchy: this.getLocationHeirarchy(this.props.location)
+    });
+  }
+
+  getLocationHeirarchy(location) {
+    let locationArray = {
+      "/": 0,
+      "/education": 1,
+      "/work": 2,
+      "/interests": 3,
+      "/contact": 4
+    };
+    let current = location.pathname;
+    console.log(locationArray[current]);
+    return locationArray[current];
+  }
   render() {
     const { location } = this.props;
-    const timeout = { enter: 800, exit: 400 };
+    const currentKey = location.pathname.split("/")[1] || "/";
+    const timeout = { enter: 2000, exit: 2000 };
     console.log(location);
     console.log(window.location.href)
 
     return (
-      <TransitionGroup component="div" className="outer-container">
-        <CSSTransition
-          timeout={timeout}
-          classNames="pageSlider"
-          mountOnEnter={false}
-          unmountOnExit={true}
-        >
-          <div className="container">
-            <h1>xyluz.com</h1>
-            <NavBar />
-            <Switch location={location}>
-              <Route path="/" exact component={Profile} />
-              <Route path="/education" component={Education} />
-              <Route path="/work" component={Work} />
-              <Route path="/interests" component={Interests} />
-              <Route path="/contact" component={Contact} />
-            </Switch>
 
-            <Arrows showArrow={location.pathname} />
-            <Socials />
-          </div>
-        </CSSTransition>
-      </TransitionGroup>
+      <div className="container">
+        <h1>xyluz.com</h1>
+        <NavBar />
+
+        <TransitionGroup component="div" className="inner-container">
+          <CSSTransition
+            key={currentKey}
+            timeout={timeout}
+            classNames="pageSlider"
+            mountOnEnter={false}
+            unmountOnExit={true}
+          >
+            <main
+              className={
+                this.getLocationHeirarchy(location) -
+                  this.state.prevHeirarchy >=
+                0
+                  ? "down"
+                  : "up"
+              }
+            >
+              <Switch location={location}>
+                <Route path="/" exact component={Profile} />
+                <Route path="/education" component={Education} />
+                <Route path="/work" component={Work} />
+                <Route path="/interests" component={Interests} />
+                <Route path="/contact" component={Contact} />
+              </Switch>
+            </main>
+          </CSSTransition>
+        </TransitionGroup>
+
+        <Arrows />
+        <Socials />
+      </div>
     );
   }
 }
