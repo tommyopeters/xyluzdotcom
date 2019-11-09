@@ -1,0 +1,119 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Source Sans Pro";
+  font-size: 1.8rem;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #faf0e6;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.container {
+  display: grid;
+  grid-template-rows: max-content max-content 1fr;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  nav {
+    display: flex;
+    justify-content: center;
+    ul {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      list-style-type: none;
+      gap: 6rem;
+
+      li {
+        font-size: 2.2rem;
+        color: #4a4c59;
+        text-decoration: none;
+      }
+      li.active {
+        font-weight: 700;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  font-size: 4.5rem;
+  color: #4a4c59;
+  margin: 3rem;
+}
+
+h2 {
+  font-family: "Source Sans Pr" o;
+  font-size: 5rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+  color: #4a4c59;
+}
+h4 {
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  font-size: 2.5rem;
+  color: #4a4c59;
+  margin-bottom: 0.6rem;
+}
+h6 {
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  font-size: 2rem;
+  color: #4a4c59;
+  margin-bottom: 1.8rem;
+}
+p {
+  font-size: 2.5rem;
+  color: #4a4c59;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+.social-links {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #4a4c59;
+  top: 50%;
+  right: 5%;
+  font-size: 3rem;
+  gap: 2rem;
+  transform: translateY(-50%);
+}
+.navigation {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
