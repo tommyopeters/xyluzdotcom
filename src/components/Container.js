@@ -38,7 +38,7 @@ class Container extends Component {
   render() {
     const { location } = this.props;
     const currentKey = location.pathname.split("/")[1] || "/";
-    const timeout = { enter: 2000, exit: 2000 };
+    const timeout = { enter: 800, exit: 800 };
     console.log(location);
 
     return (
