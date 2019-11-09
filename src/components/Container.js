@@ -17,6 +17,7 @@ class Container extends Component {
     const { location } = this.props;
     const timeout = { enter: 800, exit: 400 };
     console.log(location);
+    console.log(window.location.href)
 
     return (
       <TransitionGroup component="div" className="outer-container">
@@ -37,7 +38,7 @@ class Container extends Component {
               <Route path="/contact" component={Contact} />
             </Switch>
 
-            <Arrows />
+            <Arrows showArrow={location.pathname} />
             <Socials />
           </div>
         </CSSTransition>
