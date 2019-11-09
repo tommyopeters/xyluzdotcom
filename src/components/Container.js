@@ -19,25 +19,28 @@ class Container extends Component {
     console.log(location);
 
     return (
-      <TransitionGroup component="div" className="container">
-        <h1>xyluz.com</h1>
-        <NavBar />
+      <TransitionGroup component="div" className="outer-container">
         <CSSTransition
           timeout={timeout}
           classNames="pageSlider"
           mountOnEnter={false}
           unmountOnExit={true}
         >
-          <Switch location={location}>
-            <Route path="/" exact component={Profile} />
-            <Route path="/education" component={Education} />
-            <Route path="/work" component={Work} />
-            <Route path="/interests" component={Interests} />
-            <Route path="/contact" component={Contact} />
-          </Switch>
+          <div className="container">
+            <h1>xyluz.com</h1>
+            <NavBar />
+            <Switch location={location}>
+              <Route path="/" exact component={Profile} />
+              <Route path="/education" component={Education} />
+              <Route path="/work" component={Work} />
+              <Route path="/interests" component={Interests} />
+              <Route path="/contact" component={Contact} />
+            </Switch>
+
+            <Arrows />
+            <Socials />
+          </div>
         </CSSTransition>
-        <Arrows />
-        <Socials />
       </TransitionGroup>
     );
   }
