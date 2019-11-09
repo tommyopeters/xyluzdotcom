@@ -2,8 +2,8 @@ import React from "react";
 
 const Education = () => {
   return (
-    <section id="education" class="">
-      <div class="page page-1">
+    <section id="education">
+      <div className="page page-1">
         <h2>Education</h2>
         <h4>
           Lautech Ogbomoso - <em>(SLT) Physics Electronics</em>
