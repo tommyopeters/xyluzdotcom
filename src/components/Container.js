@@ -54,15 +54,7 @@ class Container extends Component {
             mountOnEnter={false}
             unmountOnExit={true}
           >
-            <main
-              className={
-                this.getLocationHeirarchy(location) -
-                  this.state.prevHeirarchy >=
-                0
-                  ? "down"
-                  : "up"
-              }
-            >
+            <main className={"up"}>
               <Switch location={location}>
                 <Route path="/" exact component={Profile} />
                 <Route path="/education" component={Education} />
