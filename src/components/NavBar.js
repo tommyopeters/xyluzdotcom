@@ -22,6 +22,9 @@ const NavBar = () => {
         <li>
           <NavLink to="/contact">Contact</NavLink>
         </li>
+        <div
+          className={`line ${window.location.pathname.split("/")[1]} `}
+        ></div>
       </ul>
     </nav>
   );
