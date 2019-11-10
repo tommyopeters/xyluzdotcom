@@ -11,10 +11,12 @@
   transform: translate3d(0, -100%, 0);
 }
 .pageSlider-exit.up section {
-  transform: translate3d(0, -100%, 0);
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
 }
 .pageSlider-exit.down section {
-  transform: translate3d(0, 100%, 0);
+  opacity: 0;
+  transition: opacity 400ms ease-in-out;
 }
 .pageSlider-enter.pageSlider-enter-active section {
   transform: translate3d(0, 0, 0);
